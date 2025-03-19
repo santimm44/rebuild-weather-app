@@ -3,18 +3,19 @@ import { Card, CardContent, CardTitle } from './ui/card'
 
 const MainWeatherCard = ({WeatherImage, ImageDescription, DayOfYear, Origins, Temperature}: {WeatherImage:string, ImageDescription:string, DayOfYear:string, Origins:string, Temperature:{CurrentWeather:number, HighTemp:number, LowTemp:number}}) => {
   return (
-    <Card className='flex flex-row justify-between'>
+    <Card className='flex flex-row bg-[#D9D9D999] border-transparent justify-between w-4/5 text-[2rem]'>
         <CardContent>
-            <img src={WeatherImage} alt={ImageDescription} />
+            <img src={`https://openweathermap.org/img/wn/${WeatherImage}@2x.png`} alt={ImageDescription} />
         </CardContent>
         <CardContent className='text-center'>
             <CardTitle>
             {DayOfYear}
             </CardTitle>
             <p>{Origins}</p>
-            <p>{ImageDescription + " " + Temperature.CurrentWeather}</p>
-            <p>High: {Temperature.HighTemp}</p>
-            <p>Low: {Temperature.LowTemp}</p>
+            <p>{ImageDescription}</p>
+            <p>{Temperature.CurrentWeather}°F</p>
+            <p>High: {Temperature.HighTemp}°F</p>
+            <p>Low: {Temperature.LowTemp}°F</p>
         </CardContent>
     </Card>
   )
