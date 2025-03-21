@@ -1,6 +1,7 @@
+
+
 import React from 'react'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card'
-
 
 const WeatherCard = ({ Day, WeatherImage, ImageDescription, Temperature }: { Day: string, WeatherImage: string, ImageDescription: string, Temperature: { HighTemp: number, LowTemp: number } }) => {
     return (

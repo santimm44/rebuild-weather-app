@@ -15,7 +15,7 @@ const SearchContext = createContext<Context>({
 
 //Create wrapper
 export function AppWrapper({ children }: { children: React.ReactNode }) {
-    const [searchCity, setSearchCity] = useState("");
+    const [searchCity, setSearchCity] = useState("stockton");
 
     return (
 
