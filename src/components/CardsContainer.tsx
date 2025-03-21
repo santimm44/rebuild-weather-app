@@ -36,22 +36,22 @@ const CardsContainer = () => {
 
 
 
-    let [weatherHighTemp, setWeatherHighTemp] = useState<number[]>([])
-    let [weatherLowTemp, setWeatherLowTemp] = useState<number[]>([])
-    let [weatherIcon, setWeatherIcon] = useState<string[]>([]);
-    let [weatherdescription, setWeatherDescription] = useState<string[]>([])
+    const [weatherHighTemp, setWeatherHighTemp] = useState<number[]>([])
+    const [weatherLowTemp, setWeatherLowTemp] = useState<number[]>([])
+    const [weatherIcon, setWeatherIcon] = useState<string[]>([]);
+    const [weatherdescription, setWeatherDescription] = useState<string[]>([])
 
-    let [cityName, setCityName] = useState("Stockton")
-    let [currentWeatherDescription, setCurrentWeatherDescription] = useState("")
-    let [currentWeatherIcon, setCurrentWeatherIcon] = useState("")
-    let [currentTemp, setCurrentTemp] = useState(0)
-    let [highTemp, setHighTemp] = useState(0)
-    let [lowTemp, setLowTemp] = useState(0)
+    const [cityName, setCityName] = useState("Stockton")
+    const [currentWeatherDescription, setCurrentWeatherDescription] = useState("")
+    const [currentWeatherIcon, setCurrentWeatherIcon] = useState("")
+    const [currentTemp, setCurrentTemp] = useState(0)
+    const [highTemp, setHighTemp] = useState(0)
+    const [lowTemp, setLowTemp] = useState(0)
 
-    // let [weatherLowTempVar, setWeatherLowTempVar] = useState<number>(1000)
-    let [weatherHighTempVar, setWeatherHighTempVar] = useState<number>(0)
-    let [weatherIconVar, setWeatherIconVar] = useState<string>("")
-    let [weatherdescriptionVar, setWeatherDescriptionVar] = useState<string>("")
+    // const [weatherLowTempVar, setWeatherLowTempVar] = useState<number>(1000)
+    const [weatherHighTempVar, setWeatherHighTempVar] = useState<number>(0)
+    // const [weatherIconVar, setWeatherIconVar] = useState<string>("")
+    // const [weatherdescriptionVar, setWeatherDescriptionVar] = useState<string>("")
 
     useEffect(() => {
         const fetchFunctions = async () => {
@@ -100,7 +100,7 @@ const CardsContainer = () => {
                 setWeatherDescription(existingArray => [...existingArray, returnedData.list[i].weather[0].description]);
 
                 // weatherLowTempVar = returnedData.list[i].main.temp_min;
-                weatherHighTempVar = returnedData.list[i].main.temp_max;
+                //weatherHighTempVar = returnedData.list[i].main.temp_max;
                 console.log("Checking the lowtemp: if statement #1", weatherLowTemp)
                 console.log("Checking the icon: if statement #1", weatherIcon)
 
@@ -125,8 +125,8 @@ const CardsContainer = () => {
                 setWeatherLowTemp(tempNumArray);
                 
                 setWeatherHighTemp(existingArray => [...existingArray, weatherHighTempVar]);
-                setWeatherIcon(existingArray => [...existingArray, weatherIconVar]);
-                setWeatherDescription(existingArray => [...existingArray, weatherdescriptionVar]);
+                //setWeatherIcon(existingArray => [...existingArray, weatherIconVar]);
+                //setWeatherDescription(existingArray => [...existingArray, weatherdescriptionVar]);
             }
         }
 
